@@ -127,17 +127,12 @@ export default function Cafe() {
             <Col xs={6} md={6} lg={6}>
               <Title className="title">Cafe</Title>
             </Col>
-            <Col
-              xs={12}
-              md={12}
-              lg={12}
-              style={{ display: "flex", alignItems: "center" }}
-            >
-              <div style={{ marginRight: "6px" }}>Select Location: </div>
+            <Col xs={12} md={12} lg={12} className="action-wrapper">
+              <div className="selector-text">Select Location: </div>
               <Select
+                className="selector"
                 onChange={handleCafeLocChange}
                 options={locationOptions}
-                style={{ width: "200px", marginRight: "20px" }}
                 value={cafeLocation}
               />
               <Button
