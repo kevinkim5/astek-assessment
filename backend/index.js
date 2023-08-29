@@ -1,3 +1,4 @@
+const cors = require("cors");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const express = require("express");
@@ -13,6 +14,11 @@ const Logger = require("./logger");
 const app = express();
 const logger = Logger(path.basename(__filename));
 const port = 3000;
+
+let corsOptions = {
+  origin: "*",
+};
+app.use(cors({ options: corsOptions }));
 
 app.use(bodyParser.json()); // application/json
 app.use(bodyParser.urlencoded({ extended: true })); //application/x-www-form-urlencoded
