@@ -128,6 +128,7 @@ export default function Employee() {
             </Button>
           </Row>
           <EmployeeModal
+            cafeSearch={cafeSearch}
             handleCancel={handleModalClose}
             modalData={modalData}
             modalOpen={modalOpen}

@@ -77,7 +77,9 @@ export default function EmployeeModal(props) {
           formData
         );
       }
-      store.dispatch(fetchEmployees());
+      store.dispatch(
+        fetchEmployees(props.cafeSearch === null ? "" : props.cafeSearch)
+      );
       store.dispatch(fetchCafes());
       handleCancel();
       openNotification("success", notifTitle, description);
