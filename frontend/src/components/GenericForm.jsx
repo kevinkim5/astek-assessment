@@ -1,10 +1,7 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Button, Form } from "antd";
 
 export default function GenericForm(props) {
-  // const formRef = useRef(null);
-  const [form] = Form.useForm();
-
   const formItemLayout = {
     labelCol: {
       span: 6,
@@ -23,11 +20,10 @@ export default function GenericForm(props) {
   return (
     <Form
       {...formItemLayout}
+      className="generic-form"
       form={props.form}
-      // ref={props.formRef}
       layout={"horizontal"}
       onFinish={props.onFinish}
-      style={{ maxWidth: 600 }}
       onFieldsChange={(_, allFields) => {
         props.onChange(allFields);
       }}
@@ -42,9 +38,9 @@ export default function GenericForm(props) {
             : "Delete"}
         </Button>
         <Button
+          className="cancel-btn"
           htmlType="button"
           onClick={props.handleCancel}
-          style={{ marginLeft: "10px" }}
         >
           Cancel
         </Button>
